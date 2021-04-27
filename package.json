@@ -1,0 +1,16 @@
+{
+  "name": "gsass.site",
+  "description": "Personal site for @gsass",
+  "version": "0.1",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:gsass/gsass.io.git"
+    }
+  ],
+  "homepage": "https://www.gsass.site",
+
+  "scripts": {
+    "dev": "node scripts/server.js"
+  }
+}
