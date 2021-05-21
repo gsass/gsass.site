@@ -15,7 +15,7 @@ const routes = [
     contentPath: 'resume.md'},
   { name: 'portfolio',
     hash: '#portfolio',
-    label: 'Stuff I\'ve Done',
+    label: 'Things I\'ve Done',
     contentPath: 'portfolio.md'}
 ];
 
