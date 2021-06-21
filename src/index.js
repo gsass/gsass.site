@@ -24,9 +24,11 @@ const store = Vuex.createStore({
   },
   actions: {
     navigate({ commit }, newLocation) {
-      if (newLocation.pathname !== "/") { // Only navigate between hashes, not to e.g. assets
+      // Only navigate between hashes, not to e.g. assets
+      if (newLocation.pathname && newLocation.pathname !== "/") {
         return Promise.resolve(false);
       }
+
       const pageHash = newLocation.hash.split('-')[0] || '#'; // Allow kebab links, default safely
       const route = routes.find(route => route.hash === pageHash);
       const contentIsCached = contentCache.some(cached => cached.hash === pageHash)
