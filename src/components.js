@@ -14,7 +14,7 @@ const navMenu = {
   template: `
     <div class="pure-g nav-menu">
       <div v-for="link, index in links" :key="link.hash" :class="index ? 'pure-u-1-6 pure-u-lg-1' : 'pure-u-1'">
-        <a :href="link.hash" @click="navigate(link.hash)" class="pure-menu-link">
+        <a :href="link.hash" @click="navigate(link)" class="pure-menu-link">
           {{ link.label }}
         </a>
       </div>
@@ -35,7 +35,7 @@ const renderedMarkdown = {
       // Adds a `navigate` action to the onclick event of local links
       this.$refs.content.querySelectorAll("a[href]").forEach((link) => {
         const url = new URL(link.href);
-        if (url.hostname === window.location.hostname) { link.onclick = () => this.navigate(url.hash) }
+        if (url.hostname === window.location.hostname) { link.onclick = () => this.navigate(url) }
       }, this);
     }
   },

@@ -23,8 +23,11 @@ const store = Vuex.createStore({
     setPath(state, newPath) { state.path = newPath }
   },
   actions: {
-    navigate({ commit }, newPath) {
-      const pageHash = newPath.split('-')[0]; // To allow kebab links e.g. #maps-downloads
+    navigate({ commit }, newLocation) {
+      if (newLocation.pathname !== "/") { // Only navigate between hashes, not to e.g. assets
+        return Promise.resolve(false);
+      }
+      const pageHash = newLocation.hash.split('-')[0] || '#'; // Allow kebab links, default safely
       const route = routes.find(route => route.hash === pageHash);
       const contentIsCached = contentCache.some(cached => cached.hash === pageHash)
       // Fetch and cache content if it isn't there.
@@ -63,6 +66,4 @@ const app = Vue.createApp({
 app.use(store);
 
 // Navigate to the initial path, then render the app
-store
-  .dispatch('navigate', window.location.hash || '#')
-  .then(() => app.mount("#app"));
+store.dispatch('navigate', window.location).then(() => app.mount("#app"));
