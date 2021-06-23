@@ -11,8 +11,6 @@ __If you want the hits, no fancy formatting__
 <div class="resume-container">
   <div class="resume-contact">
     George Sass<br>
-    george.a.sass@gmail.com<br>
-    781-816-0892<br>
     <a href="https://www.linkedin.com/in/gsass/">linkedin.com/in/gsass</a>
   </div>
 
