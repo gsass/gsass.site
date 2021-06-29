@@ -1,6 +1,14 @@
+/* import some fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap');
+
 .nav-menu {
     margin-top: 5%;
-    border-bottom: dotted 1px #2faded;
+    background: #444;
+    border-bottom: solid 1px #dabdad;
+}
+
+.nav-menu a {
+    color: #aeaeaa;
 }
 
 .content {
@@ -18,10 +26,51 @@
 @media screen and (min-width: 64em) {
     .nav-menu {
         margin-top: 20%;
-        border: dotted 1px #2faded;
+        border: solid 1px #dabdad;
     }
 
     .content {
         padding: 20px;
     }
+}
+
+/* Resume styling only
+   TODO make me responsive
+   TODO make me my own style sheet */
+.resume-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.resume-contact {
+  text-align: right;
+  margin-bottom: -3em;
+}
+
+.resume-section h1 {
+  font-family: 'Cardo', serif;
+}
+
+.resume-section tr {
+  vertical-align: top;
+}
+
+.resume-section ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.resume-section table {
+  border-collapse: separate;
+  border-spacing: 3px 1em;
+  margin-top: -1em;
+}
+
+.section-experience tr td:first-of-type {
+  width: 25%;
+  font-family: 'Cardo', serif;
+}
+
+.section-skills td p {
+  text-decoration: underline;
 }

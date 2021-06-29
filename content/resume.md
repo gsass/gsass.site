@@ -4,22 +4,22 @@ __If you'd like a formatted PDF__
 
 Here it is, [in PDF](/assets/resume_2021.pdf).
 
-__If you want the hits, no fancy formatting__
-
-👇👇👇
+__If you want the hits, in a copypastable format__ 👇👇👇
 
 <div class="resume-container">
   <div class="resume-contact">
     George Sass<br>
-    <a href="https://www.linkedin.com/in/gsass/">linkedin.com/in/gsass</a>
+    <a href="https://gsass.site">gsass.site</a><br>
+    <a href="mailto:gsass@gsass.site">gsass@gsass.site</a><br>
+    <a href="https://www.linkedin.com/in/gsass/">gsass@LinkedIn</a><br>
   </div>
 
   <div class="resume-section section-experience">
   <h1>Experience</h1>
   <table>
   <tr><td>
-      Smartsheet
-      Sr. Software Engineer
+      Smartsheet<br>
+      Sr. Software Engineer<br>
       2020-2021
   </td>
   <td>
@@ -27,8 +27,8 @@ __If you want the hits, no fancy formatting__
   </td></tr>
 
   <tr><td>
-  EnergySage
-  Sr. Software Engineer
+  EnergySage<br>
+  Sr. Software Engineer<br>
   2019-2020
   </td>
   <td>
@@ -40,8 +40,8 @@ __If you want the hits, no fancy formatting__
   </td></tr>
 
   <tr><td>
-  Warby Parker
-  Software Engineer
+  Warby Parker<br>
+  Software Engineer<br>
   2015-2019
   </td>
   <td>
@@ -52,14 +52,15 @@ __If you want the hits, no fancy formatting__
   </td></tr>
 
   <tr><td>
-  Vecna Technologies
-  Software Engineer
+  Vecna Technologies<br>
+  Software Engineer<br>
   2013-2015
   </td>
   <td>
     <p>Designed and implemented features of an accessible and responsive electronic health record frontend, deployed to >50,000 patients internationally. Liaised with external clients to develop integrations for health record serialization and import.</p>
   </td></tr>
   </table>
+  </div>
 
   <div class="resume-section section-education">
   <h1>Education</h1>
@@ -67,14 +68,14 @@ __If you want the hits, no fancy formatting__
   </div>
 
 
-  <div class="resume-section section-sklls">
+  <div class="resume-section section-skills">
   <h1>Skills</h1>
 
   <table>
   <tr>
 
   <td>
-  JavaScript
+  <p>JavaScript</p>
   <ul>
   <li>React (+ Redux)</li>
   <li>Vue (+ Vuex, Nuxt)</li>
@@ -84,7 +85,7 @@ __If you want the hits, no fancy formatting__
   </td>
 
   <td>
-  Python
+  <p>Python</p>
   <ul>
   <li>Django</li>
   <li>Flask</li>
@@ -94,7 +95,7 @@ __If you want the hits, no fancy formatting__
   </td>
 
   <td>
-  Other Languages
+  <p>Other Languages</p>
   <ul>
   <li>SQL (Postgres/MySQL)</li>
   <li>Java</li>
@@ -104,9 +105,9 @@ __If you want the hits, no fancy formatting__
   </td>
 
   <td>
-  AWS<br>
-  Terraform/TG<br>
-  Git/SVN<br>
+  <p>AWS</p>
+  <p>Terraform/TG</p>
+  <p>Git/SVN</p>
   </td>
 
 </div>
