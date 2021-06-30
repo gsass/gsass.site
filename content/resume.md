@@ -1,10 +1,12 @@
-# Here's my résumé
+# Behold, my résumé
 
-__If you'd like a formatted PDF__
+------
 
-Here it is, [in PDF](/assets/resume_2021.pdf).
+__If you'd like a formatted PDF__ Here it is, [in PDF](/assets/resume_2021.pdf).
 
-__If you want the hits, in a copypastable format__ 👇👇👇
+------
+
+__If you're just browsing or want to copy-paste__ 👇👇👇
 
 <div class="resume-container">
   <div class="resume-contact">

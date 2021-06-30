@@ -1,5 +1,5 @@
 /* import some fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=EB+Garamond:ital@0;1&display=swap');
 
 .nav-menu {
     margin-top: 5%;
@@ -40,6 +40,7 @@
 .resume-container {
   width: 90%;
   margin: 0 auto;
+  font-family: 'Didact Gothic', sans-serif;
 }
 
 .resume-contact {
@@ -48,7 +49,7 @@
 }
 
 .resume-section h1 {
-  font-family: 'Cardo', serif;
+  font-family: 'EB Garamond', serif;
 }
 
 .resume-section tr {
@@ -68,7 +69,7 @@
 
 .section-experience tr td:first-of-type {
   width: 25%;
-  font-family: 'Cardo', serif;
+  font-family: 'EB Garamond', serif;
 }
 
 .section-skills td p {
