@@ -13,7 +13,6 @@ __If you're just browsing or want to copy-paste__ 👇👇👇
     George Sass<br>
     <a href="https://gsass.site">gsass.site</a><br>
     <a href="mailto:gsass@gsass.site">gsass@gsass.site</a><br>
-    <a href="https://www.linkedin.com/in/gsass/">gsass@LinkedIn</a><br>
   </div>
 
   <div class="resume-section section-experience">
