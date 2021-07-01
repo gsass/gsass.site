@@ -6,6 +6,9 @@ body {
     background-color: #eee;
     background-image:  linear-gradient(#7070bb20 1px, transparent 1px), linear-gradient(to right, #7070bb20 1px, #f9f9fd 1px);
     background-size: 5vmin 5vmin;
+}
+
+div, table {
     font-size: 3.5vw;
 }
 
@@ -44,6 +47,9 @@ body {
 @media screen and (min-width: 64rem) {
     body {
         background-size: 2.5vmin 2.5vmin;
+    }
+
+    div, table {
         font-size: 1.5vw;
     }
 
