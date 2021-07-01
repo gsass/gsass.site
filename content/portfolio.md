@@ -67,7 +67,7 @@ Investment in automated testing yields stellar returns, especially if you valida
 
 ## 2015 - Warby Parker: Full-stack and playing the full field
 
-In 2015, I moved to New York and started working at Warby Parker. I was excited to take this job, and saw it as an ability to leverage my web application engineering skills as well as my industry knowledge of medical software.
+In 2015, I moved to New York and started working at [Warby Parker](https://www.warbyparker.com). I was excited to take this job, and saw it as an ability to leverage my web application engineering skills as well as my industry knowledge of medical software.
 
 When I joined Warby Parker, the company was smaller than it is today, and the tech team was just beginning to develop specialist roles. This meant that over my first two years there, I would take on a variety of roles, ranging from front-end engineering for the company's web store to developing controller logic for allocation frames (another fun ETL project!). I really enjoyed the experience of scaling and modernizing our ecommerce features as the company grew to serve more customers, with a broader range of product, across more online and brick-and-mortar channels.
 
@@ -96,7 +96,7 @@ Whenever possible, let the database do the work.
 
 ## 2013 - Vecna: Health, usability, and accessibility
 
-In 2013, I went on to work at another company with robotics projects, but in their Electronic Health Records department\*. This was my first experience with full-stack engineering. At the time, the healthcare industry was adapting to new "Meaningful Use" federal standards for functionality, accessibility, and portability of health record systems.
+In 2013, I went on to work at [Vecna](https://www.vecna.com/), another company with robotics projects, but in their Electronic Health Records department\*. This was my first experience with full-stack engineering for web applications. At the time, the healthcare industry was adapting to new "Meaningful Use" federal standards for functionality, accessibility, and portability of health record systems.
 
 My team was initially charged with modernizing the frontend code (to Backbone, the state of the art at the time) so we could ensure compliance and accessibility of our Patient Dashboard and Patient Onboarding experiences. This was my first time managing dependencies across and between the client/server layers of a web application. It was also my first time working around the limits of an ORM - ever since then I've worked to Let The DB Do The Work whenever possible.
 
