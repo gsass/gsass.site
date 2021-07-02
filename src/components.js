@@ -13,7 +13,7 @@ const navMenu = {
   methods: Vuex.mapActions([ 'navigate' ]),
   template: `
     <div class="pure-g nav-menu">
-      <div v-for="link, index in links" :key="link.hash" :class="link.isHeading ? 'pure-u-1 nav-heading': 'pure-u-1-3 pure-u-md-1-4 pure-u-lg-1' ">
+      <div v-for="link, index in links" :key="link.hash" :class="link.isHeading ? 'pure-u-1 nav-heading': 'pure-u-1-3 pure-u-lg-1' ">
         <a :href="link.hash" @click="navigate(link)" class="pure-menu-link">
           {{ link.label }}
         </a>
