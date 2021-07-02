@@ -72,10 +72,8 @@ __If you're just browsing or want to copy-paste__ 👇👇👇
   <div class="resume-section section-skills">
   <h1>Skills</h1>
 
-  <table>
-  <tr>
-
-  <td>
+  <div class="pure-g">
+  <div class="pure-u-1-2 pure-u-lg-1-4">
   <p>JavaScript</p>
   <ul>
   <li>React (+ Redux)</li>
@@ -83,19 +81,18 @@ __If you're just browsing or want to copy-paste__ 👇👇👇
   <li>Webpack</li>
   <li>Node (+ npm, Yarn)</li>
   </ul>
-  </td>
+  </div>
 
-  <td>
+  <div class="pure-u-1-2 pure-u-lg-1-4">
   <p>Python</p>
   <ul>
   <li>Django</li>
   <li>Flask</li>
   <li>Tornado</li>
   <li>SQLAlchemy</li>
-  </ul>
-  </td>
+  </div>
 
-  <td>
+  <div class="pure-u-1-2 pure-u-lg-1-4">
   <p>Other Languages</p>
   <ul>
   <li>SQL (Postgres/MySQL)</li>
@@ -103,12 +100,17 @@ __If you're just browsing or want to copy-paste__ 👇👇👇
   <li>Go</li>
   <li>HTML/CSS</li>
   </ul>
-  </td>
+  </div>
 
-  <td>
-  <p>AWS</p>
-  <p>Terraform/TG</p>
-  <p>Git/SVN</p>
-  </td>
+  <div class="pure-u-1-2 pure-u-lg-1-4">
+  <p>Tools</p>
+  <ul>
+    <li>AWS</li>
+    <li>Terraform/TG</li>
+    <li>Git/SVN</li>
+  </ul>
+  </div>
+
+  </div>
 
 </div>
