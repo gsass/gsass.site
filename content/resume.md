@@ -24,7 +24,7 @@ __If you're just browsing or want to copy-paste__ 👇👇👇
       2020-2021
   </td>
   <td>
-    <p>Added tooling to create and manage cloud resources, increasing async data intake API throughput and improving system observability for on-call engineers. Wrote a feature plan to implement, test, and roll out user-defined themes for intake forms.</p>
+  <p>Led a team which planned implementation, testing, and roll out of user-defined themes for intake forms. Added tooling to create and manage cloud resources, increasing async data intake API throughput and improving system observability for on-call engineers.</p>
   </td></tr>
 
   <tr><td>
