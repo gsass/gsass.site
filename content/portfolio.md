@@ -60,8 +60,9 @@ The big thing my time at Energysage taught me was the value of comprehensive tes
 ### Lesson Learned:
 Investment in automated testing yields stellar returns, especially if you validate the tests fully characterize the system.
 
-\* The other big lesson from this job (not a new one, though) was the high ROI of investing in user research.
-\*\* If I had more time, I would have liked to fully automate the process through Terraform and Invoke or similar tools.
+_\* The other big lesson from this job (not a new one, though) was the high ROI of investing in user research._
+
+_\*\* If I had more time, I would have liked to fully automate the process through Terraform and Invoke or similar tools._
 
 ------
 
@@ -118,6 +119,7 @@ Later at Vecna, I led a team of 3 which automated most user onboarding: an ETL\*
 Compartmentalize code wisely to reduce uncertainty in planning and validation.
 
 _\* Vecna worked on a rather broad suite of applicatiions at this time. Since then, the company has split into separate Robotics and Healthcare companies._ 
+
 _\*\* [Extract, Transform, Load](https://en.wikipedia.org/wiki/Extract,_transform,_load)_
 
 ------
