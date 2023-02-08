@@ -1,2 +1,2 @@
-# gsass.io
+# gsass.site
 Personal website
