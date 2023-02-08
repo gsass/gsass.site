@@ -8,8 +8,8 @@ If you're here at this point, you're probably looking for my [résumé](#resume)
 
 You may also be trying to get more info or get in touch. You can find me:
 
-<img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="32" height="32"> [@gsass](https://www.linkedin.com/in/gsass/), which also has my resume/details<br>
-<img src="https://s2.svgbox.net/social.svg?ic=github&color=000000" width="32" height="32"> [@gsass](https://github.com/gsass), where I keep personal code projects<br>
-<img src="https://s2.svgbox.net/social.svg?ic=twitter&color=000000" width="32" height="32"> [@george\_sass](https://www.twitter.com/george_sass), where I post, but often not about software
+<img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000000" width="32" height="32"> [@gsass](https://www.linkedin.com/in/gsass/), which also has my resume/details
 
-Either that or you're a search engine crawler, which is also cool.
+<img src="https://s2.svgbox.net/social.svg?ic=github&color=000000" width="32" height="32"> [@gsass](https://github.com/gsass), where you can see some code I wrote
+
+_I don't use social media much anymore. Sorry._
