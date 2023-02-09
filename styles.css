@@ -90,6 +90,10 @@ div, table {
     padding-left: 20px;
 }
 
+.section-experience ul {
+    list-style-type: "\1F449\ ";
+}
+
 .resume-section table {
     border-collapse: separate;
     border-spacing: 3px 1em;
