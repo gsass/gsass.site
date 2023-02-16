@@ -9,8 +9,20 @@
     }
   ],
   "homepage": "https://www.gsass.site",
-
   "scripts": {
-    "dev": "node scripts/server.js"
+    "dev": "webpack serve --mode=development",
+    "build-dev": "webpack --config webpack.config.js --mode=development",
+    "build": "webpack --config webpack.config.js --mode=production"
+  },
+  "dependencies": {
+    "dompurify": "2.4.4",
+    "marked": "^4.2.12",
+    "vue": "3.0.0",
+    "vuex": "4.0.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.11.1"
   }
 }

@@ -1,3 +1,6 @@
+import { createApp } from 'vue'
+import { createStore, mapGetters, mapState } from 'vuex'
+
 import routes from './routes.js';
 import components from './components.js';
 
@@ -11,7 +14,7 @@ let contentCache = [
 ];
 const notFoundMessage = '## 404! Sad Times, Dogg.';
 
-const store = Vuex.createStore({
+const store = createStore({
   state: { path: null },
   getters: {
     content(state) {
@@ -47,10 +50,10 @@ const store = Vuex.createStore({
 /*
 * Set up the main app, and mount it in the container.
 */
-const app = Vue.createApp({
+const app = createApp({
   components,
   data() {
-    return { routes, ...Vuex.mapState(['path']), ...Vuex.mapGetters(['content'])};
+    return { routes, ...mapState(['path']), ...mapGetters(['content'])};
   },
   template: `
     <div class="pure-g">

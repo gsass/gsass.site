@@ -1,3 +1,5 @@
+import { mapActions } from 'vuex';
+
 import renderMarkdown from './renderer.js';
 
 /*
@@ -10,7 +12,7 @@ const navMenu = {
       return this.routes.filter(item => !!item.label)
     }
   },
-  methods: Vuex.mapActions([ 'navigate' ]),
+  methods: mapActions([ 'navigate' ]),
   template: `
     <div class="pure-g nav-menu">
       <div v-for="link, index in links" :key="link.hash" :class="link.isHeading ? 'pure-u-1 nav-heading': 'pure-u-1-3 pure-u-lg-1' ">
@@ -30,7 +32,7 @@ const renderedMarkdown = {
     }
   },
   methods: {
-    ...Vuex.mapActions([ 'navigate' ]),
+    ...mapActions([ 'navigate' ]),
     connectRenderedLinks() {
       // Adds a `navigate` action to the onclick event of local links
       this.$refs.content.querySelectorAll("a[href]").forEach((link) => {

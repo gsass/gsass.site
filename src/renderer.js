@@ -1,3 +1,6 @@
+import { sanitize } from 'dompurify';
+import { marked } from 'marked';
+
 /*
 * Define custom renderer to apply Pure classes as needed
 */
@@ -36,7 +39,7 @@ marked.use({ renderer })
 
 const renderMarkdown = (rawMarkdown) => marked.parse(
     rawMarkdown,
-    { sanitizer:  DOMPurify.sanitize }
+    { sanitizer: sanitize }
 );
 
 export default renderMarkdown;
