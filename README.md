@@ -10,6 +10,7 @@ Personal website, written in Vue and bundled via Webpack. Is that overkill for s
 ## Notes for myself
 
 ### Developing for the website
+- `brew install yarn && yarn install` on a new machine
 - `yarn run dev` will build the webpack bundle in development mode and watch for file changes
   - Dev site is served at http://127.0.0.1:42069/
 - `yarn build` will build a production bundle
