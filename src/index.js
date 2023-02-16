@@ -4,20 +4,18 @@ import { createStore, mapGetters, mapState } from 'vuex'
 import routes from './routes.js';
 import components from './components.js';
 
-/*
-* Set up the state manager, a `vuex` store
-*/
-
-// First, add a cache for fetched markdown content
+// Cache for fetched markdown content
 let contentCache = [
   // Stores elements of form {hash: String, content: String}
 ];
 const notFoundMessage = '## 404! Sad Times, Dogg.';
 
+// Set up the state manager, a `vuex` store
 const store = createStore({
   state: { path: null },
   getters: {
     content(state) {
+      // Get content to render, keying off the path in state
       const cached = contentCache.find(item => item.hash === state.path) || {};
       return cached.content || notFoundMessage;
     }
@@ -27,21 +25,23 @@ const store = createStore({
   },
   actions: {
     navigate({ commit }, newLocation) {
-      // Only navigate between hashes, not to e.g. assets
+      // Only navigate between hashes. Follow links normally otherwise.
       if (newLocation.pathname && newLocation.pathname !== "/") {
         return Promise.resolve(false);
       }
 
       const pageHash = newLocation.hash.split('-')[0] || '#'; // Allow kebab links, default safely
       const route = routes.find(route => route.hash === pageHash);
+
+      // Fetch and cache content if it's defined in routes.js but not loaded
       const contentIsCached = contentCache.some(cached => cached.hash === pageHash)
-      // Fetch and cache content if it isn't there.
       if (route && route.contentPath && !contentIsCached) {
         return fetch(`./content/${route.contentPath}`)
           .then(r => r.text())
           .then(content => contentCache.push({hash: pageHash, content }))
           .then(() => commit('setPath', pageHash));
       }
+      // Otherwise, set the new path and allow re-render immediately
       return new Promise(() => commit('setPath', pageHash));
     }
   }

@@ -6,6 +6,9 @@ import renderMarkdown from './renderer.js';
 * Define App components
 */
 const navMenu = {
+  /*
+  * Top-level navigation menu
+  */
   props: { routes: Array },
   computed: {
     links() {
@@ -25,6 +28,9 @@ const navMenu = {
 };
 
 const renderedMarkdown = {
+  /*
+  * Renders markdown documents from the content directory as sanitized HTML
+  */
   props: { content: Function },
   computed: {
     rendered() {
