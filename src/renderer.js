@@ -37,9 +37,9 @@ const renderer = {
 }
 marked.use({ renderer })
 
-const renderMarkdown = (rawMarkdown) => marked.parse(
+export default function renderMarkdown(rawMarkdown) {
+  return marked.parse(
     rawMarkdown,
     { sanitizer: sanitize }
-);
-
-export default renderMarkdown;
+  );
+}
