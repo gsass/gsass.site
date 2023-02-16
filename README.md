@@ -10,8 +10,9 @@ Personal website, written in Vue and bundled via Webpack. Is that overkill for s
 ## Notes for myself
 
 ### Developing for the website
-`yarn run dev` will build the webpack bundle in development mode and watch for file changes
-`yarn build` will build a production bundle
+- `yarn run dev` will build the webpack bundle in development mode and watch for file changes
+  - Dev site is served at http://127.0.0.1:42069/
+- `yarn build` will build a production bundle
 
 ### Adding content
 Content is stored in markdown in the `content` directory of this repo. You can edit it as you would markdown.
