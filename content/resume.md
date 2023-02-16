@@ -2,11 +2,11 @@
 
 ------
 
-__If you'd like a formatted PDF__ Here's my résumé [in PDF](/assets/resume_2023.pdf).
+__If you'd like a formatted PDF,__ [here ya go](/assets/resume_2023.pdf).
 
 ------
 
-__If you're just browsing or want to copy-paste__ 👇👇👇
+__If you don't want a PDF,__ 👇👇👇
 
 <div class="resume-container">
   <div class="resume-contact">
