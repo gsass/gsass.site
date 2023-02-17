@@ -29,6 +29,5 @@ To add a new page:
 - Add a new route to `routes.js`
 
 ## Wishlist/TODOs
-- [ ] Responsive styling fixes
-- [ ] Get "Back" button to navigate properly
+- [ ] Update styles to work better on mobile (text size, nav bar location)
 
