@@ -72,3 +72,12 @@ app.use(store);
 
 // Navigate to the initial path, then render the app
 store.dispatch('navigate', window.location).then(() => app.mount("#app"));
+
+// Listen for browser navigation events and trigger 'navigate' on them
+addEventListener(
+  'popstate',
+  (e) => {
+    e.preventDefault();
+    store.dispatch('navigate', window.location);
+  },
+);
