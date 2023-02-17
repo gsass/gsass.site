@@ -35,7 +35,31 @@ const renderer = {
   }
 
 }
-marked.use({ renderer })
+
+/*
+* Extend the renderer to recognize b64 and convert to ASCII
+*/
+const b64render = {
+  name: 'base64',
+  level: 'inline',
+  start(src) { return src.match(/b64:/)?.index; }, // Search from b64: on
+  tokenizer(src, tokens) {
+    const rule = /^b64:([\d\w]*={0,3})/; // Match 'b64:<encoded>' and capture the encoded value
+    const match = rule.exec(src);
+    if (match) {
+      return {
+        type: 'base64',
+        raw: match[0],
+        decoded: this.lexer.inlineTokens(atob(match[1])),
+      };
+    }
+  },
+  renderer(token) {
+    return `<span class='decoded'>${this.parser.parseInline(token.decoded)}</span>`
+  },
+};
+
+marked.use({ renderer, extensions: [b64render] });
 
 export default function renderMarkdown(rawMarkdown) {
   return marked.parse(

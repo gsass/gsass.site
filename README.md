@@ -18,7 +18,9 @@ Personal website, written in Vue and bundled via Webpack. Is that overkill for s
 ### Adding content
 Content is stored in markdown in the `content` directory of this repo. You can edit it as you would markdown.
 
-The rendered is configured to automatically apply Pure styling to various elements wherever browser defaults look bad.
+The renderer is configured to automatically apply Pure styling to various elements wherever browser defaults look bad.
+
+Any information which could be scraped should be obfuscated in source by encoding it as b64 and adding `b64:<encoded markup>` into the markdown document. Inline markdown elements e.g. [links](./) or **emphasis** will be rendered from the decoded string. Note that encoded strings inside HTML tags will not be rendered.
 
 ### Adding a page
 I'm relying on hash-based routing to avoid fighting Github Pages's router. This is a bit of a hack, but I've made the code easy to read.
