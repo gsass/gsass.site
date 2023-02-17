@@ -21,13 +21,12 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  watch: false,
   // Dev Server Config
   devServer: {
     static: {
       directory: __dirname,
     },
-    compress: false,
+    compress: true,
     port: 42069,
   },
 };
