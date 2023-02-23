@@ -9,7 +9,7 @@ body {
 }
 
 div, table {
-    font-size: 3.5vw;
+    font-size: 3.5vmax;
 }
 
 .nav-menu {
@@ -38,12 +38,11 @@ div, table {
 
 .content .pure-img {
     margin: 0 auto;
-    /* Making images not push text entirely out of viewport
-       This is not responsive
-       TODO make it responsive */
-    max-height: 30em;
+    max-height: 50vh;
 }
 
+/* Styling for bigger screens,
+Like ones bigger than phones */
 @media screen and (min-width: 64rem) {
     body {
         background-size: 2.5vmin 2.5vmin;
@@ -61,11 +60,15 @@ div, table {
     .content {
         padding: 20px;
     }
+
+    .content .pure-img {
+        max-height: 30vh;
+    }
 }
 
 /* Resume styling only
-   TODO make me responsive
-   TODO make me my own style sheet */
+TODO make me responsive
+TODO make me my own style sheet */
 .resume-container {
     width: 90%;
     margin: 0 auto;
