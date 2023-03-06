@@ -23,6 +23,8 @@ The company continued growing throughout this time, and around the time we were 
 
 Building on work I'd done earlier to prevent loss of sensitive config details on save, I updated the API views for configuring integrations to allow safe partial updates by default. I updated the pattern so that we used semantically appropriate verbs (PATCH for partial updates, POST for writes) instead of overloading view behavior. I was able to consolidate our logic in the controller layer, greatly simplifying the hooks we were using on the front end. Standardizing database schemas ended up being more scope than we could tackle (JSON blobs in databases: hard to remove, even after that "shortcut" loses its lustre). That said, we had tackled a class of bugs which was front-of-mind for our users and Support team, and were confident enough to move on to other system improvements going forward.
 
+------
+
 ## 2020 - Smartsheet: Enterprise scale features, observability, and on-call improvements
 
 Working at a small company meant deploying at a limited scale. To learn how to build systems which served a larger audience, I took a job with [Smartsheet](https://www.smartsheet.com/), a SaaS provider for enterprise productivity software.
