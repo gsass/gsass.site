@@ -1,6 +1,6 @@
 # 👋
 
-<img src="../img/selfie_sketch.jpeg" style="float: right; height: 10em;"/>
+<img src="../img/selfie_sketch.png" style="float: right; height: 10em;"/>
 
 I'm George Sass. I live in Somerville, MA, and am a Software Engineer (likely the relevant detail if you're here).
 
