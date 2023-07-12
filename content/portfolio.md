@@ -7,21 +7,27 @@ Additional context for the top-level points in my resume. If you're interested i
 
 ## 2021 - dbt Labs: Task orchestration, API design, and user experience
 
-In early 2021 I joined dbt Labs (dbt = 'data build tool', essentially a way to declaratively configure database loads and transforms) on the Shipments team. The team primarily focused on interactions between the hosted software suite (dbt Cloud) and external systems such as data warehouses and background task orchestration.
+In early 2021 I joined dbt Labs (dbt = 'data build tool', a toolkit for data transforms) on the Shipments team. The team focused on interactions between the software suite (dbt Cloud), data warehouses, and the transform runner.
+
+### Environment Variable Management
 
 The first project I took on was launching and refining an API to set custom environment variables for data transforms (jobs). This was an often-requested feature which was in development when I started this job. I worked with Ryan, the tech lead for this project, to complete and test the first release of this API. We added a set of integration tests, which allowed us to assert that the API was fit for a beta release to users.
 
 Once released, we iterated on that beta and resolved some issues which came up in real-world use (e.g. requiring/prepending a prefix for custom variables to differentiate them from built-ins, supporting bulk edits) and issues we foresaw (supporting encrypted secret variables, query/index optimization to reduce lookup/write overhead). I took some time at this point to refactor the code so we could unit test the business logic for this API in isolation from the permissions/request handling code which was exercised by the integration tests. (If I'd come onto this project earlier, I would have likely pushed for unit tests to come first.)
 
-The environment variables API is still used today - at some point I helped develop a tool to define variables (and job configs) in a declarative manner similar to how Terraform would do it.
+Several months later, I rewrote the UI for environment variable management. Working closely with our Product Design team and another engineer, I rebuilt the UI using contemporary React (hooks, functional components) and our new component library. This was an excellent opportunity to pair program, and I took advantage of that to introduce this pattern, which helped my counterpart and I manage the complexity of a total rewrite. We chose to take the time to write automated tests for this page, making the final product more durable and regression free.
 
-Once we had a good grasp on job environments, the team's focus turned to job scheduling, which was a major performance bottleneck (~90% of jobs started >60s past scheduled time). Once again, I found myself working to develop a distributed service outside of our monolith. This time we chose to break from Python and write the service in Golang (because of its native threading patterns), which I learned on the fly as we developed it. One thing I really liked about Go (outside of how fast and graceful it is) was the pattern of starting with parameterized unit tests and avoiding any heavy mocks. I relished writing these simple yet effective tests, and the whole team was thrilled with the resulting quality of the code. At launch time, our scheduler ran 10,000 times faster than the one it replaced, and the only quality issues we found post-launch came from differences between Quartz and Unix style CRON strings.
+The environment variables tools are still used today - they've been adopted by nearly all of dbt's enterprise clients.
 
-By this point, there was a clear need for another system modernization: overhauling our frontend to allow for simple state management and a component library. This meant our team had to rewrite most of our pages from scratch. I worked on a few of them and got to revisit some work I'd done at the very start of this job: the frontend for the Environment Variables feature. Working closely with our Product Design team and another engineer, I rewrote this page to use contemporary React patterns (hooks, functional components) so we could deprecate the React/Angular chimera which powered it before. This was an excellent opportunity to pair program, and I took advantage of that to introduce this pattern (initially using TDD to set a strong foundation), which helped my counterpart and I manage the complexity of a total rewrite and write more readable/consistent/testable code. Over the course of this rewrite, we were able to put some long-standing presentational issues to bed, so our new page was more consistent and readable for end users as well.
+### Task Orchestration for Transforms
 
-The company continued growing throughout this time, and around the time we were done with this rewrite, we were hit with a fresh growing pain: the state of our data warehouse integrations. This was highlighted by a rushed, nearly disastrous race to support a new data warehouse which was gaining market share at the time. I had worked on code close to our integration layer prior, and had seen a pattern of user-facing bugs which suggested issues with the design of that code. At this point, I followed up and identified those issues.  We were struggling with inconsistent representations of our connection/credential configs in database, which resulted in dilute/one-off schema enforcement/business logic in both the front and back end of the system. I wrote a technical plan to move us to a better place and got to work gathering stakeholder consensus.
+A few months in, my team's focus turned to job scheduling, which was a major performance bottleneck (~90% of jobs started >60s past scheduled time). We chose to break from Python and write the service as a distributed system using Golang, which I learned on the fly as we developed it. I developed a testing approech of which let us build  parameterized unit tests without any heavy mocks. These simple yet effective tests allowed great coverage and high quality code. At launch time, our scheduler ran 10,000 times faster than the one it replaced, and we only saw one minor regression at launch day.
 
-Building on work I'd done earlier to prevent loss of sensitive config details on save, I updated the API views for configuring integrations to allow safe partial updates by default. I updated the pattern so that we used semantically appropriate verbs (PATCH for partial updates, POST for writes) instead of overloading view behavior. I was able to consolidate our logic in the controller layer, greatly simplifying the hooks we were using on the front end. Standardizing database schemas ended up being more scope than we could tackle (JSON blobs in databases: hard to remove, even after that "shortcut" loses its lustre). That said, we had tackled a class of bugs which was front-of-mind for our users and Support team, and were confident enough to move on to other system improvements going forward.
+### Credential/Configuration Overhaul
+
+As our user base grew, we had to address the state of our data warehouse integrations. I identified an issue with the design of that code: inconsistent representations of our connection/credential configs in database, which led to inconsistent save/update behavior. I wrote a technical plan to move us to a better place and got to work gathering stakeholder consensus.
+
+Building on work I'd done earlier, I updated our controller logic to allow safe and consistent updates (PATCH for partial updates, POST for writes). The consolidated logic let me greatly simplify the hooks we were using on the front end. The team and I chose to not prioritize fixing the database schemas due to expected scope, but the new logic we'd added was more than adequate. In the end, this removed the third most common cause for escalated support calls, and a major pain point for users.
 
 ------
 
@@ -29,7 +35,11 @@ Building on work I'd done earlier to prevent loss of sensitive config details on
 
 Working at a small company meant deploying at a limited scale. To learn how to build systems which served a larger audience, I took a job with [Smartsheet](https://www.smartsheet.com/), a SaaS provider for enterprise productivity software.
 
+### Form Toolkit Enhancements
+
 My team focused on tools to let users build and share fillable forms, and our first project was to design the next iteration of one of our form solutions: Update Requests. I wrote tests and documentation to characterize the current front end behavior and controller logic for the feature, so we could build the next version with confidence. Working with my team to identify more use cases, I added more automated tests to safeguard against any system regressions. This allowed me to develop a standard submission handler for all types of form. At the end of this project, my team and I added observability tooling for this feature, allowing on-call staff to work more efficiently.
+
+### Form Themes Groundwork
 
 After laying the groundwork to quickly iterate on Update Requests, my team moved onto other forms-related features. I planned and scoped the addition of themes to our intake forms, accounting for development, testing, and eventual release of the product. I then set milestones for hand-offs with relevant stakeholder teams. After the plan was reviewed and accepted (first by the larger team, and then by our division manager and the CTO), I wrote the JIRA epic/tickets for this effort, working with product/engineering colleagues to reduce planning uncertainty and set phases/milestones so we could test/roll out changes incrementally.
 
@@ -41,15 +51,23 @@ I onboarded to my role at Smartsheet quickly, laid a clear product roadmap for m
 
 In 2019, I moved back to Boston, and to [Energysage](https://www.energysage.com). I wanted to get more practice working with the languages and technologies (contemporary web stack, SQL, AWS + deploy/ops tools) I'd worked with at Warby Parker, and had experience working on marketplace products. I also liked the company size (Series B), mission (clean energy), and had a good impression of the team from my interviews.
 
-Energysage was also in a high-growth stage when I joined, so my work once again focused on scaling our web stack to improve page speed, search ranking, and user onboarding. Working with members of Energysage's marketing team, I updated our CMS to lazy load images assets and automatically update reference pages with up-to-date market data. These improvements significantly improved our SEO, and today, Energysage is Page 1 ranked for a variety of solar-related search engine queries.
+### Performance and Scaling
+
+Energysage was growing quickly when I joined, and my work focused on scaling our web stack to improve page speed, search ranking, and user onboarding. Working with members of Energysage's marketing team, I updated our CMS to lazy load images assets and automatically update reference pages with up-to-date market data. These improvements significantly improved our SEO, and today, Energysage is Page 1 ranked for a variety of solar-related search engine queries.
 
 As our customer base grew, we needed to prioritize scaling less performant services. On the frontend, I updated our reference pages to use Elasticsearch for user queries. On the backend, I moves our job queue to a hosted solution, reducing transaction time for vendors trying to submit quotes to our marketplace.
 
+### Business Flow Enhancements
+
 Energysage also needed to scale manual business processes within our back-office suite and business partner experience. Working with our Heads of Product and Partner Support, I added pre-fill suggestions for our quoting flow, driven by data around respective partners' quoting trends. Allowing installers to more quickly assess properties and scope projects, paired with faster quote submission, helped us achieve a 15% QoQ increase in quote volume after launch.
+
+### Building Our Second Marketplace
 
 Talking with counterparts in revenue, it was very clear that battery storage was a big opportunity for the marketplace. We hadn't yet started designing this feature, but updated legislation had made batteries for solar systems a much better business expansion opportunity. I led a small cross-functional team which compiled user and market research and developed a feature plan to develop and release the company's first adjacent product: a marketplace for home battery installs. After presenting a feature proposal with estimates for feature ROI and level of effort to implement to the CEO and Head of Product, we got cleared to break off a small team and implement this feature.
 
 At this point, I was most familiar with the project, so I acted as team lead for the feature team, with 2-3 engineers on staff. I focused on coordinating the effort, and clearing roadblocks on our way (a port from framework-less jQuery to javascript view classes stands out). We were able to meet our proposed timeline and launch without incident.
+
+### Takeaways
 
 The big thing my time at Energysage taught me was the value of comprehensive testing and choosing/maintaining good testing tools\*.
 - Towards the end of my time, I was juggling two major projects: a Python 3 migration and developing the battery storage marketplace, which would have been impossible to do without automated quality assurance. For the former, my colleagues and I made the wise decision to focus on our test plan early, and our CTO dedicated two months of the team's time to thoroughly prepare and safely migrate the code base.
@@ -122,11 +140,13 @@ One project that stands out to me from this time was production-hardening our op
 
 In 2013, I took a job at [Vecna](https://www.vecna.com/), continuing to develop APIs, this time for Electronic Health Records (EHRs).
 
-This was my first experience with full-stack engineering for web applications, and I was excited to work on both controller logic and front-end clients interacting with APIs. My team was initially charged with modernizing the frontend code (to Backbone, the state of the art at the time). At the time, the healthcare industry was adapting to new federal standards for functionality, accessibility, and portability of health record systems, so my team had to ensure standards compliance of our Patient Dashboard and Patient Onboarding experiences.
+This was my first experience with full-stack engineering for web applications, and I was excited to learn about controller logic and front-end clients interacting with APIs. My team was initially charged with modernizing the frontend code (to Backbone, the state of the art at the time). At the time, the healthcare industry was adapting to new federal standards for functionality, accessibility, and portability of health record systems, so my team had to ensure standards compliance of our Patient Dashboard and Patient Onboarding experiences.
 
 This was my first time managing dependencies across and between the client/server layers of a web application. I learned new-to-me concepts such as vendorization, containerization, and planning for emergent requirements (from clients and evolving standards). It was also my first time working around the limits of an ORM - ever since then I've worked to Let The DB Do The Work whenever possible.
 
-Later at Vecna, I led a team of 3 which automated most user onboarding using an ETL\*\* pipeline to transfer patient data (via an XML document mandated by the new federal standards) between health record systems. The key technical challenge on this project was developing and validating a document parser/data loader for this complex markup. The experience taught me a lot about testing complex code&mdash;specifically, the value of identifying and decoupling units under test. Since this was a strategically important project, I worked with our Client Manager to roll a bulk migration tool out for larger clients, who needed to migrate up to 50,000 patient health records at a time.
+### ETLs Supporting Enterprise Client Migrations
+
+Later at Vecna, I led a team of 3 which automated most user onboarding using an ETL pipeline to transfer patient data (via an XML document mandated by the new federal standards) between health record systems. The key technical challenge on this project was developing and validating a document parser/data loader for this complex markup. The experience taught me a lot about testing complex code&mdash;specifically, the value of identifying and decoupling units under test. Since this was a strategically important project, I worked with our Client Manager to roll a bulk migration tool out for larger clients, who needed to migrate up to 50,000 patient health records at a time.
 
 ### Key Skills
 - Dependency Management
@@ -143,17 +163,21 @@ Later at Vecna, I led a team of 3 which automated most user onboarding using an 
 ### Lesson Learned
 Set service boundaries wisely to reduce uncertainty in planning and validation.
 
-_\*\* [Extract, Transform, Load](https://en.wikipedia.org/wiki/Extract,_transform,_load)_
-
 ------
 
 ## 2010 - Draper Laboratory: Hello World, hello API users
 
 In college, I was really into robots, got lucky enough to work on a robotics project for my undergraduate capstone, and got hired by our sponsor company to continue work on that project.
 
-At Draper, I was responsible for developing software test fixtures for a variety of sensors. As my team's first dedicated software hire, was also responsible for estimating efforts and setting timelines for software development.
+### Autonomous Vehicle Software
 
-Towards the end of my time at Draper, I wrote my first network service, in a sense: an API to stream sensor test data from our test harnesses to client machines for real-time visualization and post-processing.
+At Draper, I was responsible for developing software test fixtures for a variety of sensors. As my team's first dedicated software hire, I was also responsible for estimating efforts and setting timelines for software development. I planned my own projects, set milestones, and managed stakeholder needs for my first major deliverable: a navigation system and sensor data logger for an autonomous ground vehicle used for RF research.
+
+This project was successful and I followed it up by supporting another unmanned vehicle project: a simulator to validate behavior of a proposed autonomous underwater vehicle.
+
+### Sensor Data Logging and Analysis
+
+Towards the end of my time at Draper, I wrote my first network service: an API to control a sensor testing machine, and capture validation data from the sensor under test. This service was robust enough to stream and save high-speed data (sub-millisecond update rate) from our test harness, while allowing engineers to inspect system state and captured data live during tests.
 
 ### Key Skills
 - Software validation
