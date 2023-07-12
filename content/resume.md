@@ -3,11 +3,11 @@ _Just The Hits_
 
 ------
 
-__If you'd like a formatted PDF,__ [here ya go](/assets/resume_2023.pdf).
+__If you'd like a formatted PDF,__ [download it here.](/assets/resume_2023.pdf).
 
 ------
 
-__If you don't want a PDF,__ 👇👇👇
+__If you don't want a PDF,__ read on.
 
 <div class="resume-container">
   <div class="resume-contact">
