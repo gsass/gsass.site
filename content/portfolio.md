@@ -1,7 +1,7 @@
 # Things I've Done 
 _The long-form version_
 
-The portfolio adds additional context to the top-level points in my resume. If you're interested in some job I reference there, there's more detailed information on that here.
+Additional context for the top-level points in my resume. If you're interested in some job I reference there, there's more detailed information on that here.
 
 ------
 
