@@ -110,9 +110,17 @@ _\*\* If I had more time, I would have liked to fully automate the process throu
 
 In 2015, I moved to New York and started working at [Warby Parker](https://www.warbyparker.com). I hoped to leverage my web application engineering skills and knowledge of medical software, and learn more about the deploy/runtime infrastructure backing WSGI workers, databases, standalone microservices, etc.
 
-When I joined Warby Parker, the tech team was just beginning to develop specialist roles. This meant that over my first two years there, I would take on a variety of roles, ranging from product galleries and seasonal landing pages to developing controller logic for allocation frames (another fun ETL project!). This work helped scale and modernize our ecommerce features as the company grew to serve more customers, with a broader range of product, across more online and brick-and-mortar channels.
+When I joined Warby Parker, the tech team was just beginning to develop specialist roles. This meant that over my first two years there, I would take on a variety of roles, starting with product galleries, seasonal landing pages, and market analytics tools for our customer insights team. Many of these projects were quite short, so I'm not going to cover them all.
 
-One project that stands out to me from this time was production-hardening our optometry telemedicine app and integrating it with our business suite. I needed to ensure reliable production performance, whilst maintaining HIPAA compliance across all aspects of the service. I worked across the full application stack for this service: updating the layout, styling, and interactivity of our doctor portal, designing an API to coordinate two stateful systems (prescription approval and optical fulfillment controllers), and developed dashboards and metrics so we could observe the system and confirm we were meeting SLA. The work was technically grueling but paid off: we were able to automate 40+ hours of manual reconciliation and fulfillment overrides per week, while reducing approval and fulfillment times by close to a business day.
+### Distributed Services for Allocation and Accounting
+
+As our sales grew, I enhanced the logic for product allocation (another ETL project). Since this module was unrelated to any of the core business logic and needed a specific SSL library to work with our Supply Chain tooling, I designed and implemented a microservice to handle the ETL without affecting our WSGI service. This let us effectively allocate a broader range of products across our online and brick-and-mortar channels.
+
+More sales meant we needed to automate more of our accounting and audit tools (e.g. for tracking Zero Dollar Units shipped with glasses). Since this code could be audited along with our financial records, we also built it as a distributed service. I worked directly with our Lead Fiancial Engineer to build, completely test, and deploy this service. It ended up saving our finance team hours of manual accounting for non-glasses items every week.
+
+### Telemedicine System Integration
+
+I productionised the PoC for a greenfield optometry telemedicine app and integrated it with our business suite, while maintaining HIPAA compliance across all aspects of the service. I worked across the full application stack for this service: updating the layout, styling, and interactivity of our doctor portal, designing an API to coordinate two stateful systems (prescription approval and optical fulfillment controllers), and developed dashboards and metrics so we could observe the system and confirm we were meeting SLAs. The work was technically grueling but paid off: we were able to automate 40+ hours of manual reconciliation and fulfillment overrides per week, while reducing approval and fulfillment times by close to a business day.
 
 ### Key Skills:
 - Frontend Engineering using Resct and the Dispatcher pattern
