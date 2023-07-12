@@ -59,6 +59,7 @@ Like ones bigger than phones */
 
     .content {
         padding: 20px;
+        margin-right: 10%;
     }
 
     .content .pure-img {
@@ -106,8 +107,4 @@ TODO make me my own style sheet */
 .section-experience tr td:first-of-type {
     width: 25%;
     font-family: 'EB Garamond', serif;
-}
-
-.section-skills p {
-    text-decoration: underline;
 }
