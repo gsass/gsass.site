@@ -96,6 +96,7 @@ TODO make me my own style sheet */
 .section-experience .job-title {
     font-family: 'EB Garamond', serif;
     font-weight: 600;
+    padding-left: .5em;
     padding-bottom: 1.5em;
 }
 
@@ -105,6 +106,7 @@ TODO make me my own style sheet */
     }
 
     .section-experience .job-title {
+        padding-left: 0;
         padding-bottom: 0;
     }
 }
