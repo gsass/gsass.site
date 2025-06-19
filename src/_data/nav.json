@@ -1,0 +1,16 @@
+{
+    "items": [
+        {
+            "label": "🏡",
+            "url": "/"
+        },
+        {
+            "label": "Resume",
+            "url": "/resume/"
+        },
+        {
+            "label": "More Details",
+            "url": "/portfolio/"
+        }
+    ]
+}

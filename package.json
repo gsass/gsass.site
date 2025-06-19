@@ -1,28 +1,23 @@
 {
   "name": "gsass.site",
-  "description": "Personal site for @gsass",
-  "version": "1.0",
+  "description": "@gsass personal web page",
+  "version": "2.0.0",
   "repositories": [
     {
       "type": "git",
-      "url": "git@github.com:gsass/gsass.io.git"
+      "url": "git@github.com:gsass/gsass.site.git"
     }
   ],
-  "homepage": "https://www.gsass.site",
-  "scripts": {
-    "dev": "webpack serve --mode=development",
-    "build-dev": "webpack --config webpack.config.js --mode=development",
-    "build": "webpack --config webpack.config.js --mode=production"
-  },
+  "homepage": "https://gsass.site",
+  "author": "gsass",
+  "license": "MIT",
+  "private": true,
   "dependencies": {
-    "dompurify": "2.4.4",
-    "marked": "^4.2.12",
-    "vue": "3.0.0",
-    "vuex": "4.0.0",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
-  },
-  "devDependencies": {
-    "webpack-dev-server": "^4.11.1"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^5.0.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-plugins": "^0.1.6",
+    "markdown-it-task-lists": "^2.1.1",
+    "markdown-it-tasks": "^0.0.5"
   }
 }

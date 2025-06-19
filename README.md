@@ -1,35 +1,18 @@
 # gsass.site
-Personal website, written in Vue and bundled via Webpack. Is that overkill for something which could be generated as a set of static assets? Yes, but it was nice to remember how to set up a frontend project.
+Personal home page for me, George Sass
 
-## Repo structure
-- [index.html](./index.html) is the main page. It contains imports for the JS bundles, styles, and an app container.
-- [index.js](./src/index.js) contains the main app. You do not need to edit this to publish content.
-- [routes.js](./src/routes.js) is a vanilla JS module containing all the routes for the app. You will need to edit this to publish content.
-- [The `content` directory](./content) is where markdown content goes. Note that while HTML is _valid_ markdown, the input sanitizer may scrub elements it interprets as security risks.
+## Developing for the website
+- `yarn install`
+- `yarn exec eleventy -- --serve`
 
-## Notes for myself
+## Adding content
+Content is stored in markdown in the `src` directory of this repo. You can edit it as you would markdown.
 
-### Developing for the website
-- `brew install yarn && yarn install` on a new machine
-- `yarn run dev` will build the webpack bundle in development mode and watch for file changes
-  - Dev site is served at http://127.0.0.1:42069/
-- `yarn build` will build a production bundle
-
-### Adding content
-Content is stored in markdown in the `content` directory of this repo. You can edit it as you would markdown.
-
-The renderer is configured to automatically apply Pure styling to various elements wherever browser defaults look bad.
-
-Any information which could be scraped should be obfuscated in source by encoding it as b64 and adding `b64:<encoded markup>` into the markdown document. Inline markdown elements e.g. [links](./) or **emphasis** will be rendered from the decoded string. Note that encoded strings inside HTML tags will not be rendered.
-
-### Adding a page
-I'm relying on hash-based routing to avoid fighting Github Pages's router. This is a bit of a hack, but I've made the code easy to read.
-
+## Adding a page
 To add a new page:
-- Write up the content in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-- Add the markdown file to the `content` directory.
-- Add a new route to `routes.js`
+- Write up the content in [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- Add your markdown file to the `src` directory.
+- Add a new route to `src/_data/nav.json` if you want it to appear in the nav
 
 ## Wishlist/TODOs
-- [ ] Update styles to work better on mobile (text size, nav bar location)
-
+- [ ] Custom widths for panorama photos. See [docs](https://www.11ty.dev/docs/plugins/image/#html-transform)

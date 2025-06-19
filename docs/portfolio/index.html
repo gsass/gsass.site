@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- Import `pure.css` and its responsive grid plugin for styling -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="./img/favicon.svg">
+
+        <title>More Details</title>
+
+        <style>
+            /* import some fonts */
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=EB+Garamond:ital@0;1&display=swap');
+
+body {
+    /* Background pattern for some visual flair */
+    background-color: #eee;
+    background-image:  linear-gradient(#7070bb20 1px, transparent 1px), linear-gradient(to right, #7070bb20 1px, #f9f9fd 1px);
+    background-size: 5vmin 5vmin;
+}
+
+div{
+    font-size: 3.5vmax;
+}
+
+.nav-menu {
+    margin-top: 5%;
+    background: #444;
+    border-bottom: solid 1px #dabdad;
+}
+
+.nav-menu a {
+    font-family: 'Didact Gothic', sans-serif;
+    color: #aeaeaa;
+}
+
+.nav-menu a:hover, .nav-menu a:focus {
+    color: #444;
+}
+
+.content {
+    padding: 20px 10%;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.content h1, .content h2 {
+    font-family: 'EB Garamond', serif;
+}
+
+.content .pure-img {
+    margin: 0 auto;
+    max-height: 50vh;
+}
+
+/* Styling for bigger screens,
+Like ones bigger than phones */
+@media screen and (min-width: 64rem) {
+    body {
+        background-size: 2.5vmin 2.5vmin;
+    }
+
+    div {
+        font-size: 1.5vw;
+    }
+
+    .nav-menu {
+        margin-top: 20%;
+        border: solid 1px #dabdad;
+    }
+
+    .content {
+        padding: 20px;
+        margin-right: 10%;
+    }
+
+    .content .pure-img {
+        max-height: 30vh;
+    }
+}
+
+/* Resume styling only
+TODO make me my own style sheet */
+.resume-container {
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.resume-contact {
+    text-align: right;
+}
+
+.resume-section h1 {
+    font-family: 'EB Garamond', serif;
+}
+
+.resume-section {
+    vertical-align: top;
+}
+
+.resume-section ul {
+    margin-top: 0;
+    padding-left: 20px;
+    list-style-type: "\1F449\ ";
+}
+
+.section-experience .job-title {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    padding-left: .5em;
+    padding-bottom: 1.5em;
+}
+
+@media screen and (min-width: 64rem) {
+    .resume-contact {
+        margin-bottom: -3em;
+    }
+
+    .section-experience .job-title {
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+}
+
+        </style>
+    </head>
+
+    <body>
+        <div id="main">
+            <div class="pure-g">
+                <div id="menu" class="pure-u-1 pure-u-lg-1-5">
+                    <!doctype html>
+<div class="pure-g nav-menu">
+    
+        
+        <div class="pure-u-1">
+            <a href="/" class="pure-menu-link ">🏡</a>
+        </div>
+        
+    
+        
+        <div class="pure-u-1-2 pure-u-lg-1">
+            <a href="/resume/" class="pure-menu-link ">Resume</a>
+        </div>
+        
+    
+        
+        <div class="pure-u-1-2 pure-u-lg-1">
+            <a href="/portfolio/" class="pure-menu-link menu-link-active">More Details</a>
+        </div>
+        
+    
+</div>
+
+                </div>
+                <div class="pure-u-1 pure-u-lg-4-5">
+                    <div class="content">
+                        <h1>Things I've Done</h1>
+<p><em>The long-form version</em></p>
+<p>Additional context for the top-level points in my resume. If you're interested in some job I reference there, there's more detailed information on that here.</p>
+<hr>
+<h2>2021 - dbt Labs: Task orchestration, API design, and user experience</h2>
+<p>In early 2021 I joined dbt Labs (dbt = 'data build tool', a toolkit for data transforms) on the Shipments team. The team focused on interactions between the software suite (dbt Cloud), data warehouses, and the transform runner.</p>
+<h3>Environment Variable Management</h3>
+<p>The first project I took on was launching and refining an API to set custom environment variables for data transforms (jobs). This was an often-requested feature which was in development when I started this job. I worked with Ryan, the tech lead for this project, to complete and test the first release of this API. We added a set of integration tests, which allowed us to assert that the API was fit for a beta release to users.</p>
+<p>Once released, we iterated on that beta and resolved some issues which came up in real-world use (e.g. requiring/prepending a prefix for custom variables to differentiate them from built-ins, supporting bulk edits) and issues we foresaw (supporting encrypted secret variables, query/index optimization to reduce lookup/write overhead). I took some time at this point to refactor the code so we could unit test the business logic for this API in isolation from the permissions/request handling code which was exercised by the integration tests. (If I'd come onto this project earlier, I would have likely pushed for unit tests to come first.)</p>
+<p>Several months later, I rewrote the UI for environment variable management. Working closely with our Product Design team and another engineer, I rebuilt the UI using contemporary React (hooks, functional components) and our new component library. This was an excellent opportunity to pair program, and I took advantage of that to introduce this pattern, which helped my counterpart and I manage the complexity of a total rewrite. We chose to take the time to write automated tests for this page, making the final product more durable and regression free.</p>
+<p>The environment variables tools are still used today - they've been adopted by nearly all of dbt's enterprise clients.</p>
+<h3>Task Orchestration for Transforms</h3>
+<p>A few months in, my team's focus turned to job scheduling, which was a major performance bottleneck (~90% of jobs started &gt;60s past scheduled time). We chose to break from Python and write the service as a distributed system using Golang, which I learned on the fly as we developed it. I developed a testing approech of which let us build  parameterized unit tests without any heavy mocks. These simple yet effective tests allowed great coverage and high quality code. At launch time, our scheduler ran 10,000 times faster than the one it replaced, and we only saw one minor regression at launch day.</p>
+<h3>Credential/Configuration Overhaul</h3>
+<p>As our user base grew, we had to address the state of our data warehouse integrations. I identified an issue with the design of that code: inconsistent representations of our connection/credential configs in database, which led to inconsistent save/update behavior. I wrote a technical plan to move us to a better place and got to work gathering stakeholder consensus.</p>
+<p>Building on work I'd done earlier, I updated our controller logic to allow safe and consistent updates (PATCH for partial updates, POST for writes). The consolidated logic let me greatly simplify the hooks we were using on the front end. The team and I chose to not prioritize fixing the database schemas due to expected scope, but the new logic we'd added was more than adequate. In the end, this removed the third most common cause for escalated support calls, and a major pain point for users.</p>
+<hr>
+<h2>2020 - Smartsheet: Enterprise scale features, observability, and on-call improvements</h2>
+<p>Working at a small company meant deploying at a limited scale. To learn how to build systems which served a larger audience, I took a job with <a href="https://www.smartsheet.com/">Smartsheet</a>, a SaaS provider for enterprise productivity software.</p>
+<h3>Form Toolkit Enhancements</h3>
+<p>My team focused on tools to let users build and share fillable forms, and our first project was to design the next iteration of one of our form solutions: Update Requests. I wrote tests and documentation to characterize the current front end behavior and controller logic for the feature, so we could build the next version with confidence. Working with my team to identify more use cases, I added more automated tests to safeguard against any system regressions. This allowed me to develop a standard submission handler for all types of form. At the end of this project, my team and I added observability tooling for this feature, allowing on-call staff to work more efficiently.</p>
+<h3>Form Themes Groundwork</h3>
+<p>After laying the groundwork to quickly iterate on Update Requests, my team moved onto other forms-related features. I planned and scoped the addition of themes to our intake forms, accounting for development, testing, and eventual release of the product. I then set milestones for hand-offs with relevant stakeholder teams. After the plan was reviewed and accepted (first by the larger team, and then by our division manager and the CTO), I wrote the JIRA epic/tickets for this effort, working with product/engineering colleagues to reduce planning uncertainty and set phases/milestones so we could test/roll out changes incrementally.</p>
+<p>I onboarded to my role at Smartsheet quickly, laid a clear product roadmap for my teams, and demonstrated technical and product acumen to get buy-in from relevant stakeholders. Ultimately the role was more product/operations heavy than was communicated, so found a new job.</p>
+<hr>
+<h2>2019 - Energysage: Marketplace Go-To-Market, and greenfield product development</h2>
+<p>In 2019, I moved back to Boston, and to <a href="https://www.energysage.com">Energysage</a>. I wanted to get more practice working with the languages and technologies (contemporary web stack, SQL, AWS + deploy/ops tools) I'd worked with at Warby Parker, and had experience working on marketplace products. I also liked the company size (Series B), mission (clean energy), and had a good impression of the team from my interviews.</p>
+<h3>Performance and Scaling</h3>
+<p>Energysage was growing quickly when I joined, and my work focused on scaling our web stack to improve page speed, search ranking, and user onboarding. Working with members of Energysage's marketing team, I updated our CMS to lazy load images assets and automatically update reference pages with up-to-date market data. These improvements significantly improved our SEO, and today, Energysage is Page 1 ranked for a variety of solar-related search engine queries.</p>
+<p>As our customer base grew, we needed to prioritize scaling less performant services. On the frontend, I updated our reference pages to use Elasticsearch for user queries. On the backend, I moves our job queue to a hosted solution, reducing transaction time for vendors trying to submit quotes to our marketplace.</p>
+<h3>Business Flow Enhancements</h3>
+<p>Energysage also needed to scale manual business processes within our back-office suite and business partner experience. Working with our Heads of Product and Partner Support, I added pre-fill suggestions for our quoting flow, driven by data around respective partners' quoting trends. Allowing installers to more quickly assess properties and scope projects, paired with faster quote submission, helped us achieve a 15% QoQ increase in quote volume after launch.</p>
+<h3>Building Our Second Marketplace</h3>
+<p>Talking with counterparts in revenue, it was very clear that battery storage was a big opportunity for the marketplace. We hadn't yet started designing this feature, but updated legislation had made batteries for solar systems a much better business expansion opportunity. I led a small cross-functional team which compiled user and market research and developed a feature plan to develop and release the company's first adjacent product: a marketplace for home battery installs. After presenting a feature proposal with estimates for feature ROI and level of effort to implement to the CEO and Head of Product, we got cleared to break off a small team and implement this feature.</p>
+<p>At this point, I was most familiar with the project, so I acted as team lead for the feature team, with 2-3 engineers on staff. I focused on coordinating the effort, and clearing roadblocks on our way (a port from framework-less jQuery to javascript view classes stands out). We were able to meet our proposed timeline and launch without incident.</p>
+<h3>Takeaways</h3>
+<p>The big thing my time at Energysage taught me was the value of comprehensive testing and choosing/maintaining good testing tools*.</p>
+<ul>
+<li>Towards the end of my time, I was juggling two major projects: a Python 3 migration and developing the battery storage marketplace, which would have been impossible to do without automated quality assurance. For the former, my colleagues and I made the wise decision to focus on our test plan early, and our CTO dedicated two months of the team's time to thoroughly prepare and safely migrate the code base.</li>
+<li>During the migration effort, I was responsible for updating and testing some low-level code (session serialization, text encoding) which needed to be validated in a production-like environment, something we didn't have. My CTO and I set up a production-like validation environment, and I developed ORM managers to anonymize personal data when a production DB snapshot was uploaded.</li>
+<li>Having a validation server allowed us to supplement our unit and integration tests with User Acceptance Testing, further de-risking larger or more complex changes. I coordinated User Acceptance Testing for the Python 3 migration. We prevented regressions in our search service, as well as catching existing bugs in customer-facing flows, and as a result, we migrated our production systems  without major incident.</li>
+</ul>
+<h3>Key Skills:</h3>
+<ul>
+<li>Project Planning</li>
+<li>User Research + writing User Stories</li>
+<li>Understanding of observability tooling (e.g. APM, database traces)</li>
+<li>Automated Validation and User Acceptance Testing</li>
+<li>Mentorship and Teaching</li>
+</ul>
+<h3>Key Deliverables:</h3>
+<ul>
+<li>Developed a new Battery Storage Marketplace
+<ul>
+<li>High-level feature design</li>
+<li>Feature specification and scoping</li>
+<li>Feature implementation</li>
+<li>Automated and user acceptance testing</li>
+</ul>
+</li>
+<li>Python 3 Migration
+<ul>
+<li>Set up a validation environment for automated and user testing</li>
+<li>User Acceptance Testing plan and coordination</li>
+<li>Session portability shim (to support tiered migration)</li>
+<li>Added tooling for DB migrations and data set anonymization</li>
+</ul>
+</li>
+<li>Developed an automated suggestion engine for the Quote Wizard</li>
+<li>Task queue migration from RabbitMQ to SQS</li>
+<li>Default CDN images to lazy load</li>
+</ul>
+<h3>Lessons Learned:</h3>
+<ul>
+<li>Investment in automated testing yields stellar returns, especially if you validate the tests fully characterize the system.</li>
+<li>Full rewrites seem really appealing, but testing-driven gradual rewrites are easier to justify, easier to plan, and get delivered closer to on-time.</li>
+</ul>
+<p><em>* The other big lesson from this job (not a new one, though) was the high ROI of investing in user research.</em></p>
+<p><em>** If I had more time, I would have liked to fully automate the process through Terraform and Invoke or similar tools.</em></p>
+<hr>
+<h2>2015 - Warby Parker: Full-stack engineering and dealing with scale</h2>
+<p>In 2015, I moved to New York and started working at <a href="https://www.warbyparker.com">Warby Parker</a>. I hoped to leverage my web application engineering skills and knowledge of medical software, and learn more about the deploy/runtime infrastructure backing WSGI workers, databases, standalone microservices, etc.</p>
+<p>When I joined Warby Parker, the tech team was just beginning to develop specialist roles. This meant that over my first two years there, I would take on a variety of roles, starting with product galleries, seasonal landing pages, and market analytics tools for our customer insights team. Many of these projects were quite short, so I'm not going to cover them all.</p>
+<h3>Distributed Services for Allocation and Accounting</h3>
+<p>As our sales grew, I enhanced the logic for product allocation (another ETL project). Since this module was unrelated to any of the core business logic and needed a specific SSL library to work with our Supply Chain tooling, I designed and implemented a microservice to handle the ETL without affecting our WSGI service. This let us effectively allocate a broader range of products across our online and brick-and-mortar channels.</p>
+<p>More sales meant we needed to automate more of our accounting and audit tools (e.g. for tracking Zero Dollar Units shipped with glasses). Since this code could be audited along with our financial records, we also built it as a distributed service. I worked directly with our Lead Fiancial Engineer to build, completely test, and deploy this service. It ended up saving our finance team hours of manual accounting for non-glasses items every week.</p>
+<h3>Telemedicine System Integration</h3>
+<p>I productionised the PoC for a greenfield optometry telemedicine app and integrated it with our business suite, while maintaining HIPAA compliance across all aspects of the service. I worked across the full application stack for this service: updating the layout, styling, and interactivity of our doctor portal, designing an API to coordinate two stateful systems (prescription approval and optical fulfillment controllers), and developed dashboards and metrics so we could observe the system and confirm we were meeting SLAs. The work was technically grueling but paid off: we were able to automate 40+ hours of manual reconciliation and fulfillment overrides per week, while reducing approval and fulfillment times by close to a business day.</p>
+<h3>Key Skills:</h3>
+<ul>
+<li>Frontend Engineering using Resct and the Dispatcher pattern</li>
+<li>RESTful API design</li>
+<li>Database Schema design and migration</li>
+<li>ETL design</li>
+<li>Service infrastructure design in AWS</li>
+<li>Observability</li>
+<li>Incident response and facilitating post-incident reviews</li>
+</ul>
+<h3>Key Deliverables:</h3>
+<ul>
+<li>Ecommerce frontend pages (shopping gallery, prescription upload pages, user profiles)</li>
+<li>Fulfillment rule engine for lens cutting</li>
+<li>Accounting system integration to track non-saleable consumable goods cost</li>
+<li>Telemedicine system structural improvements and integration</li>
+<li>iPad app dashboard for prescription review</li>
+</ul>
+<h3>Lessons Learned</h3>
+<ul>
+<li>Whenever possible, let the database do the work.</li>
+<li>Fragile planning slows delivery time just as much as fragile tools. Whenever possible, optimize work for maximum flow.</li>
+</ul>
+<hr>
+<h2>2013 - Vecna: Health APIs and accessible clients</h2>
+<p>In 2013, I took a job at <a href="https://www.vecna.com/">Vecna</a>, continuing to develop APIs, this time for Electronic Health Records (EHRs).</p>
+<p>This was my first experience with full-stack engineering for web applications, and I was excited to learn about controller logic and front-end clients interacting with APIs. My team was initially charged with modernizing the frontend code (to Backbone, the state of the art at the time). At the time, the healthcare industry was adapting to new federal standards for functionality, accessibility, and portability of health record systems, so my team had to ensure standards compliance of our Patient Dashboard and Patient Onboarding experiences.</p>
+<p>This was my first time managing dependencies across and between the client/server layers of a web application. I learned new-to-me concepts such as vendorization, containerization, and planning for emergent requirements (from clients and evolving standards). It was also my first time working around the limits of an ORM - ever since then I've worked to Let The DB Do The Work whenever possible.</p>
+<h3>ETLs Supporting Enterprise Client Migrations</h3>
+<p>Later at Vecna, I led a team of 3 which automated most user onboarding using an ETL pipeline to transfer patient data (via an XML document mandated by the new federal standards) between health record systems. The key technical challenge on this project was developing and validating a document parser/data loader for this complex markup. The experience taught me a lot about testing complex code—specifically, the value of identifying and decoupling units under test. Since this was a strategically important project, I worked with our Client Manager to roll a bulk migration tool out for larger clients, who needed to migrate up to 50,000 patient health records at a time.</p>
+<h3>Key Skills</h3>
+<ul>
+<li>Dependency Management</li>
+<li>Browser Compatibility Management</li>
+<li>Feature Planning for third-party integrations</li>
+<li>Teaching and mentoring</li>
+</ul>
+<h3>Key Deliverables</h3>
+<ul>
+<li>API for healthcare data (specifically, for procedures &amp; medications provided)</li>
+<li>Electronic Health Record Dashboard/Onboarding/Profile frontend</li>
+<li>Health Record ETL pipeline and backing XML parser library</li>
+<li>Bespoke integrations for health record ETL</li>
+</ul>
+<h3>Lesson Learned</h3>
+<p>Set service boundaries wisely to reduce uncertainty in planning and validation.</p>
+<hr>
+<h2>2010 - Draper Laboratory: Hello World, hello API users</h2>
+<p>In college, I was really into robots, got lucky enough to work on a robotics project for my undergraduate capstone, and got hired by our sponsor company to continue work on that project.</p>
+<h3>Autonomous Vehicle Software</h3>
+<p>At Draper, I was responsible for developing software test fixtures for a variety of sensors. As my team's first dedicated software hire, I was also responsible for estimating efforts and setting timelines for software development. I planned my own projects, set milestones, and managed stakeholder needs for my first major deliverable: a navigation system and sensor data logger for an autonomous ground vehicle used for RF research.</p>
+<p>This project was successful and I followed it up by supporting another unmanned vehicle project: a simulator to validate behavior of a proposed autonomous underwater vehicle.</p>
+<h3>Sensor Data Logging and Analysis</h3>
+<p>Towards the end of my time at Draper, I wrote my first network service: an API to control a sensor testing machine, and capture validation data from the sensor under test. This service was robust enough to stream and save high-speed data (sub-millisecond update rate) from our test harness, while allowing engineers to inspect system state and captured data live during tests.</p>
+<h3>Key Skills</h3>
+<ul>
+<li>Software validation</li>
+<li>Project estimation and planning</li>
+<li>Software release management</li>
+</ul>
+<h3>Key Deliverables</h3>
+<ul>
+<li>Release plans for sensor monitor API</li>
+<li>Validation plans for test harness controllers</li>
+<li>A documented standard library for sensor testing applications</li>
+</ul>
+<h3>Lesson Learned</h3>
+<p>Communicate (strategically) with your end users and take the time to understand their actual needs. Many problems are <a href="https://en.wikipedia.org/wiki/XY_problem">XY Problems</a>.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
