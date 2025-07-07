@@ -16,9 +16,10 @@ I've been working at Tulip for about two years, on the Access team, which manage
 
 We've been focusing on our users API and user settings APIs recently. To date I've worked on:
 - Implmenting user groups
-- Adding custom user roles with configurable permissions
+- Adding custom user roles with configurable permissions, 
 - Securing production instances with authorization checks for sysadmins (technical lead)
 - Building APIs for user settings and user online statuses (technical lead)
+  - Part of an ongoing effort to break Tulip's configuration plane out of the current monolith
 
 ## 2021 - dbt Labs: Task orchestration, API design, and user experience
 
