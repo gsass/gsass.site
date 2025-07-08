@@ -14,12 +14,19 @@ Additional context for the top-level points in my resume. If you're interested i
 
 I've been working at Tulip for about two years, on the Access team, which manages Tulip's authentication/authorization layer, permissions layer, and configuration plane.
 
-We've been focusing on our users API and user settings APIs recently. To date I've worked on:
+Tulip is the third place where I've been part of "break up the monolith in order to operate at greater scale" work. It's been fun revisiting this stage with the knowledge of distributed systems, API design, and build vs buy decisions which I have now. Putting the things I've learned into practice has helped us avoid many stumbling points I saw before.
+
+My team has been focusing on our Users API and User Settings APIs recently. To date I've worked on:
 - Implmenting user groups
-- Adding custom user roles with configurable permissions, 
+- Adding custom user roles with configurable permissions
 - Securing production instances with authorization checks for sysadmins (technical lead)
+  - Delivered this project on a tight timeline so we could land a major contract from an enterprise customer in a highly regulated industry
+  - Learned about coordinating very cross-functional efforts. When it comes to Authorization, security, regulatory, commercial, and technical teams all get involved.
 - Building APIs for user settings and user online statuses (technical lead)
+  - Learned lessons about designing services with traffic patterns in mind. User Settings is a read-heavy use case, and Online Statuses is a write-heavy use case. While the APIs are similar-looking, the system design under the surface isn't.
   - Part of an ongoing effort to break Tulip's configuration plane out of the current monolith
+
+Since these projects
 
 ## 2021 - dbt Labs: Task orchestration, API design, and user experience
 

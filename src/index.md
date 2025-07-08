@@ -19,6 +19,6 @@ I'm online at:
 
 <img src="https://s2.svgbox.net/social.svg?ic=github&color=000000" alt="Github logo" width="32" height="32"> [@gsass](https://github.com/gsass), where you can see some code I wrote
 
-<img src="https://s2.svgbox.net/social.svg?ic=gmail" width="32" height="32" alt="GMail logo"> first dot last at gmail dot com
+<img src="https://s2.svgbox.net/social.svg?ic=gmail" width="32" height="32" alt="GMail logo"> first dot a dot last at gmail dot com
 
 <small>I don't use social media anymore.</small>
