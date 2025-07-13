@@ -9,11 +9,12 @@ body {
 }
 
 div{
-    font-size: 3.5vmax;
+    font-size: 2rem;
 }
 
 .nav-menu {
     margin-top: 5%;
+    width: 100%;
     background: #444;
     border-bottom: solid 1px #dabdad;
 }
@@ -21,6 +22,7 @@ div{
 .nav-menu a {
     font-family: 'Didact Gothic', sans-serif;
     color: #aeaeaa;
+    font-size: 3rem;
 }
 
 .nav-menu a:hover, .nav-menu a:focus {
@@ -49,7 +51,7 @@ Like ones bigger than phones */
     }
 
     div {
-        font-size: 1.5vw;
+        font-size: 1.5rem;
     }
 
     .nav-menu {
