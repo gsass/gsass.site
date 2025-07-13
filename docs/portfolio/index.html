@@ -166,23 +166,25 @@ TODO make me my own style sheet */
 <p>I've been working at Tulip for about two years, on the Access team, which manages Tulip's authentication/authorization layer, permissions layer, and configuration plane.</p>
 <p>Tulip is the third place where I've been part of &quot;break up the monolith in order to operate at greater scale&quot; work. It's been fun revisiting this stage with the knowledge of distributed systems, API design, and build vs buy decisions which I have now. Putting the things I've learned into practice has helped us avoid many stumbling points I saw before.</p>
 <p>My team has been focusing on our Users API and User Settings APIs recently. To date I've worked on:</p>
-<ul>
-<li>Implmenting user groups</li>
-<li>Adding custom user roles with configurable permissions</li>
-<li>Securing production instances with authorization checks for sysadmins (technical lead)
+<h3>Implmenting user groups</h3>
+<p>My first project at Tulipm, and a good onboarding opportunity. User Groups added a lot of changes to our user experience and permissions layers, and got me some familiarity with the Typescript, Go, React, and Redux patterns at Tulip.</p>
+<h3>Adding custom user roles with configurable permissions</h3>
+<p>A followup to the User Groups effort. Custom roles was similar in implementation to groups, but there were two key differentces. The first was that this project had more security ramiifcations so the team spent more time in the design stage. The second was I had to balance competing deadlines between this work and the Sysadmin Authorization project mentioned later. Scheduling skills are critical to engineering in fast-moving environments, so I'm happy to have got the practice.</p>
+<h3>Removing legacy Meteor.js code from the data access and API layer of the app</h3>
+<p>A technical debt project, but one with a lot of decoupling and testing work. To ensure this change didn't (obviously or subtly) disrupt the user experience, I had to fully characterize some very old parts of our system. At the end of this effort, a colleague and I ran a retro and generated a plan for better testing practices, so we can remove the remaining Meteor code with more confidence in the next phase of this project.</p>
+<h3>Securing production instances with authorization checks for sysadmins (technical lead)</h3>
+<p>The first technical effort I led at Tulip. This project was challenging because it was driven by an external stakeholder, on their timeline. As a result I got to do a lot of requirement discovery, expectation setting and documentation work throughout the process of working with internal stakeholders while also liaising with the customer.</p>
 <ul>
 <li>Delivered this project on a tight timeline so we could land a major contract from an enterprise customer in a highly regulated industry</li>
-<li>Learned about coordinating very cross-functional efforts. When it comes to Authorization, security, regulatory, commercial, and technical teams all get involved.</li>
+<li>Honed coordination skills for very cross-functional efforts. When it comes to Authorization, security, regulatory, commercial, and technical teams all get involved.</li>
 </ul>
-</li>
-<li>Building APIs for user settings and user online statuses (technical lead)
+<h3>Building APIs for user settings and user online statuses (technical lead)</h3>
+<p>These APIs take up the majority of my time now. There's a lot of work involved in launching scalable APIs which can support a variety of client types, and I'm learning a lot about system design.</p>
 <ul>
 <li>Learned lessons about designing services with traffic patterns in mind. User Settings is a read-heavy use case, and Online Statuses is a write-heavy use case. While the APIs are similar-looking, the system design under the surface isn't.</li>
 <li>Part of an ongoing effort to break Tulip's configuration plane out of the current monolith</li>
 </ul>
-</li>
-</ul>
-<p>Since these projects</p>
+<p>Since some of these projects are still ongoing, I'm waiting to document outcomes.</p>
 <h2>2021 - dbt Labs: Task orchestration, API design, and user experience</h2>
 <p>In early 2021 I joined dbt Labs (dbt = 'data build tool', a toolkit for data transforms) on the Shipments team. The team focused on interactions between the software suite (dbt Cloud), data warehouses, and the transform runner.</p>
 <h3>Environment Variable Management</h3>
