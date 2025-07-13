@@ -58,6 +58,10 @@ Like ones bigger than phones */
         margin-top: 20%;
         border: solid 1px #dabdad;
     }
+    
+    .nav-menu a {
+        font-size: 2rem;
+    }
 
     .content {
         padding: 20px;
